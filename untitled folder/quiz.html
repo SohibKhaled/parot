@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+   
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/init-alpine.js"></script>
+   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/charts-lines.js" defer></script>
+    <script src="./assets/js/charts-pie.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+<body class="h-screen bg-gray-200  dark:bg-purple-800">
+  <div class="py-4 text-gray-500 dark:text-gray-400">
+    <a href="index.html" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+              <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
+              PAROT    
+          </a>
+          </div>
+          <div class="   flex flex-wrap items-center  justify-center  ">
+	<div class="max-w-md mx-auto bg-white p-8 
+				rounded-md shadow-md dark:bg-gray-800 dark:text-white" 
+		style="border: 1px solid black;">
+	
+		<h3 class="text-2xl font-bold mb-6 text-center">
+			Coding Quiz
+		</h3>
+		<form id="quizForm" class="space-y-4">
+			<!-- Question 1 -->
+			<div class="flex flex-col mb-4">
+				<label for="q1" class="text-lg text-gray-800 mb-2 dark:text-white">
+					1. What does HTML stand for?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q1a" name="q1"
+						value="a" class="mr-2" required>
+					<label for="q1a" class="text-gray-700  dark:text-white ">
+						a) Hyper Text Markup Language
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q1b" name="q1"
+						value="b" class="mr-2" required>
+					<label for="q1b" class="text-gray-700  dark:text-white">
+						b) Hyper Transfer Markup Language
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q1c" name="q1"
+					value="c" class="mr-2" required>
+					<label for="q1c" class="text-gray-700  dark:text-white">
+						c) Hyperlink and Text Markup Language
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q1d" name="q1"
+					value="d" class="mr-2" required>
+					<label for="q1d" class="text-gray-700  dark:text-white">
+						d) Hyper Tool Multi-language
+					</label>
+				</div>
+			</div>
+
+			<!-- Question 2 -->
+			<div class="flex flex-col mb-4">
+				<label for="q2" class="text-lg text-gray-800 mb-2 dark:text-white">
+					2. What does CSS stand for?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q2a" name="q2"
+					value="a" class="mr-2" required>
+					<label for="q2a" class="text-gray-700  dark:text-white">
+						a) Cascading Style Sheet
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q2b" name="q2"
+					value="b" class="mr-2" required>
+					<label for="q2b" class="text-gray-700  dark:text-white">
+						b) Computer Style Sheet
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q2c" name="q2"
+					value="c" class="mr-2" required>
+					<label for="q2c" class="text-gray-700  dark:text-white">
+						c) Colorful Style Sheet
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q2d" name="q2"
+					value="d" class="mr-2" required>
+					<label for="q2d" class="text-gray-700  dark:text-white">
+						d) Creative Style Sheet
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q3" class="text-lg text-gray-800 mb-2 dark:text-white">
+					3. What is the purpose of HTML?</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q3a" name="q3"
+					value="a" class="mr-2" required>
+					<label for="q3a" class="text-gray-700  dark:text-white">
+						b) Hyperlink and Text Markup Language
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q3b" name="q3"
+					value="b" class="mr-2" required>
+					<label for="q3b" class="text-gray-700  dark:text-white">
+						b) Computer Style Sheet
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q3c" name="q3"
+					value="c" class="mr-2" required>
+					<label for="q3c" class="text-gray-700  dark:text-white">
+						c) Home Tool Markup Language
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q3d" name="q3"
+					value="d" class="mr-2" required>
+					<label for="q3d" class="text-gray-700  dark:text-white">
+						d) Hyper Transfer Markup Language
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q4" class="text-lg text-gray-800 mb-2 dark:text-white">
+					4. What does JavaScript primarily enable you to
+					do?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q4a" name="q4"
+					value="a" class="mr-2" required>
+					<label for="q4a" class="text-gray-700  dark:text-white">
+						a) Style web pages
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q4b" name="q4"
+					value="b" class="mr-2" required>
+					<label for="q4b" class="text-gray-700  dark:text-white">
+						b) Program the behavior of web pages
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q4c" name="q4"
+					value="c" class="mr-2" required>
+					<label for="q4c" class="text-gray-700  dark:text-white">
+						c) Define the structure of web pages
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q4d" name="q4"
+					value="d" class="mr-2" required>
+					<label for="q4d" class="text-gray-700  dark:text-white">
+						d) Create databases
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q5" class="text-lg text-gray-800 mb-2 dark:text-white">
+					5. Which of the following is NOT a programming
+					language?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q5a" name="q5"
+					value="a" class="mr-2" required>
+					<label for="q5a" class="text-gray-700  dark:text-white">
+						a) Python
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q5b" name="q5"
+					value="b" class="mr-2" required>
+					<label for="q5b" class="text-gray-700  dark:text-white">
+						b) HTML
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q5c" name="q5"
+					value="c" class="mr-2" required>
+					<label for="q5c" class="text-gray-700  dark:text-white">
+						c) Java
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q5d" name="q5"
+					value="d" class="mr-2" required>
+					<label for="q5d" class="text-gray-700  dark:text-white">
+						d) JPEG
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q6" class="text-lg text-gray-800 mb-2 dark:text-white">
+					6. What is the purpose of a CSS selector?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q6a" name="q6"
+					value="a" class="mr-2" required>
+					<label for="q6a" class="text-gray-700  dark:text-white">
+						a) To select elements in HTML
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q6b" name="q6"
+					value="b" class="mr-2" required>
+					<label for="q6b" class="text-gray-700  dark:text-white">
+						b) To define styles for a webpage
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q6c" name="q6"
+					value="c" class="mr-2" required>
+					<label for="q6c" class="text-gray-700  dark:text-white">
+						c) To create variables in JavaScript
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q6d" name="q6"
+					value="d" class="mr-2" required>
+					<label for="q6d" class="text-gray-700  dark:text-white">
+						d) To structure HTML documents
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q7" class="text-lg text-gray-800 mb-2 dark:text-white">
+					7. What does the acronym API stand for?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q7a" name="q7"
+					value="a" class="mr-2" required>
+					<label for="q7a" class="text-gray-700  dark:text-white">
+						a) Advanced Programming Interface
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q7b" name="q7"
+					value="b" class="mr-2" required>
+					<label for="q7b" class="text-gray-700  dark:text-white">
+						b) Application Programming Interface
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q7c" name="q7"
+					value="c" class="mr-2" required>
+					<label for="q7c" class="text-gray-700  dark:text-white">
+						c) Automated Processing Interface
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q7d" name="q7"
+					value="d" class="mr-2" required>
+					<label for="q7d" class="text-gray-700  dark:text-white">
+						d) Association of Programmers and Inventors
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q8" class="text-lg text-gray-800 mb-2 dark:text-white">
+					8. What is the purpose of the "alt" attribute in an
+					HTML image tag?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q8a" name="q8"
+					value="a" class="mr-2" required>
+					<label for="q8a" class="text-gray-700  dark:text-white">
+						a) It sets the alignment of the image.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q8b" name="q8"
+					value="b" class="mr-2" required>
+					<label for="q8b" class="text-gray-700  dark:text-white">
+						b) It defines the alternative text for the image.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q8c" name="q8"
+					value="c" class="mr-2" required>
+					<label for="q8c" class="text-gray-700  dark:text-white">
+						c) It specifies the size of the image.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q8d" name="q8"
+					value="d" class="mr-2" required>
+					<label for="q8d" class="text-gray-700  dark:text-white">
+						d) It sets the border color of the image.
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q9" class="text-lg text-gray-800 mb-2 dark:text-white">
+					9. In JavaScript, what does the "typeof" operator
+					do?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q9a" name="q9"
+					value="a" class="mr-2" required>
+					<label for="q9a" class="text-gray-700  dark:text-white">
+						a) It checks if a variable is defined.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q9b" name="q9"
+					value="b" class="mr-2" required>
+					<label for="q9b" class="text-gray-700  dark:text-white">
+						b) It returns the type of a variable or expression.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q9c" name="q9"
+					value="c" class="mr-2" required>
+					<label for="q9c" class="text-gray-700  dark:text-white">
+						c) It concatenates strings.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q9d" name="q9"
+					value="d" class="mr-2" required>
+					<label for="q9d" class="text-gray-700  dark:text-white">
+						d) It loops through an array.
+					</label>
+				</div>
+			</div>
+
+			<div class="flex flex-col mb-4">
+				<label for="q10" class="text-lg text-gray-800 mb-2 dark:text-white">
+					10. What is the purpose of the "padding" property in
+					CSS?
+				</label>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q10a" name="q10"
+					value="a" class="mr-2" required>
+					<label for="q10a" class="text-gray-700  dark:text-white">
+						a) It sets the background color of an element.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q10b" name="q10"
+					value="b" class="mr-2" required>
+					<label for="q10b" class="text-gray-700  dark:text-white">
+						b) It defines the width of an element
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q10c" name="q10"
+					value="c" class="mr-2" required>
+					<label for="q10c" class="text-gray-700  dark:text-white">
+						c) It adds space inside the borders of an element.
+					</label>
+				</div>
+				<div class="flex items-center space-x-4">
+					<input type="radio" id="q10d" name="q10"
+					value="d" class="mr-2" required>
+					<label for="q10d" class="text-gray-700  dark:text-white">
+						d) It controls the visibility of an element
+					</label>
+				</div>
+			</div>
+
+			<hr>
+
+			<!-- Navigation Buttons -->
+			<div class="flex justify-between">
+				<button type="button" onclick="prevQuestion()"
+					class="bg-purple-500 hover:bg-purple-600 
+						text-white px-2 py-1 rounded-md">
+					Previous
+				</button>
+				<button type="button" onclick="nextQuestion()"
+						class="bg-purple-500 hover:bg-purple-600 
+							text-white px-4 py-1 rounded-md">
+					Next
+				</button>
+			</div>
+			<hr>
+
+			<button type="button" onclick="submitQuiz()"
+					class="bg-green-500 text-white px-4 py-2 
+					rounded-md mt-8">
+				Submit
+			</button>
+
+			<button type="button" onclick="restartQuiz()"
+					class="bg-red-500 text-white px-3 py-2 
+							rounded-md mt-4">
+				Restart Quiz
+			</button>
+		</form>
+
+		<div id="result" class="mt-8 hidden">
+			<h2 class="text-2xl font-bold mb-4 text-center">
+				???? Quiz Result
+			</h2>
+			<p id="score" class="text-lg 
+								font-semibold mb-2 
+								text-center">
+			</p>
+			<p id="feedback" class="text-gray-700  dark:text-white text-center"></p>
+		</div>
+	</div>
+</div>
+	<script >
+    // JavaScript Logic
+let currentQuestionIndex = 0;
+
+function showQuestion(index) {
+	const questions = 
+		document.querySelectorAll('.flex.flex-col');
+	questions.forEach((question, i) => {
+		question.style.display = i === index ? 'flex' : 'none';
+	});
+}
+
+function nextQuestion() {
+	currentQuestionIndex = 
+		
+			Math.min(currentQuestionIndex + 1, 9);
+	showQuestion(currentQuestionIndex);
+}
+
+function prevQuestion() {
+	currentQuestionIndex = 
+		
+			Math.max(currentQuestionIndex - 1, 0);
+	showQuestion(currentQuestionIndex);
+}
+
+function getSelectedOption(questionId) {
+	const selectedOption = 
+		
+			document.querySelector(`input[name=${questionId}]:checked`);
+	return selectedOption ? selectedOption.value : null;
+}
+
+function submitQuiz() {
+	// Your quiz submission logic here
+	const answers = {
+		q1: getSelectedOption('q1'),
+		q2: getSelectedOption('q2'),
+		q3: getSelectedOption('q3'),
+		q4: getSelectedOption('q4'),
+		q5: getSelectedOption('q5'),
+		q6: getSelectedOption('q6'),
+		q7: getSelectedOption('q7'),
+		q8: getSelectedOption('q8'),
+		q9: getSelectedOption('q9'),
+		q10: getSelectedOption('q10'),
+		// Add more questions as needed
+	};
+
+	// Calculate the score based on correct answers
+	let score = 0;
+	// Adjust correct answers based on your questions
+	if (answers.q1 === 'a') {
+		score += 10;
+	}
+	if (answers.q2 === 'a') {
+		score += 10;
+	}
+	if (answers.q3 === 'a') {
+		score += 10;
+	}
+	if (answers.q4 === 'b') {
+		score += 10;
+	}
+	if (answers.q5 === 'd') {
+		score += 10;
+	}
+	if (answers.q6 === 'd') {
+		score += 10;
+	}
+	if (answers.q7 === 'b') {
+		score += 10;
+	}
+	if (answers.q8 === 'a') {
+		score += 10;
+	}
+	if (answers.q9 === 'a') {
+		score += 10;
+	}
+	if (answers.q10 === 'b') {
+		score += 10;
+	}
+	// Add more conditions for other questions
+
+	// Display result section
+	const resultSection = document.getElementById('result');
+	resultSection.classList.remove('hidden');
+
+	const scoreElement = document.getElementById('score');
+	scoreElement.textContent = 
+		`Score: ${score}/100`; // Assuming each question has 10 points
+
+	const feedbackElement = 
+		document.getElementById('feedback');
+	// Customize feedback based on the score
+	if (score >= 70) {
+		feedbackElement.textContent = 
+			'Congratulations! You did great!';
+	} else {
+		feedbackElement.textContent = 
+			'You can do better. Keep practicing.';
+	}
+}
+
+// Initially hide the result section
+document.getElementById('result').classList.add('hidden');
+
+// Initially show the first question
+showQuestion(currentQuestionIndex);
+
+function restartQuiz() {
+	// Reset question index
+	currentQuestionIndex = 0;
+	// Hide result section
+	document.getElementById('result').classList.add('hidden');
+
+	// Clear selected options
+	const radioButtons = 
+		document.querySelectorAll('input[type="radio"]');
+	radioButtons.forEach(button => button.checked = false);
+
+	// Show the first question
+	showQuestion(currentQuestionIndex);
+}
+
+
+	</script>
+
+</body>
+
+</html>

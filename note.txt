@@ -1,0 +1,768 @@
+(video link)
+
+
+ <a
+              class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+              href="https://github.com/estevanmaito/windmill-dashboard"
+            >
+              <div class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <span>Star this project on GitHub</span>
+              </div>
+              <span>View more &RightArrow;</span>
+            </a>
+
+
+
+
+
+
+
+ ()           
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+____ this is a teachers table _____
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <div class="w-full overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">Subject</th>
+                      <th class="px-4 py-3">Teacher</th>
+                      <th class="px-4 py-3">Location</th>
+                      <th class="px-4 py-3">Date/time</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                   
+ <!-- Avatar with inset shadow -->
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                         
+                   
+                          <div>
+                            <p class="font-semibold">Jolina Angelie</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Unemployed
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 369.95
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600"
+                        >
+                          Pending
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+                          <!-- Avatar with inset shadow -->
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Sarah Curry</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Designer
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 86.00
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700"
+                        >
+                          Denied
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+                          <!-- Avatar with inset shadow -->
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Rulia Joberts</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Actress
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 1276.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1546456073-6712f79251bb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Wenzel Dashington</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Actor
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700"
+                        >
+                          Expired
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1502720705749-871143f0e671?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=b8377ca9f985d80264279f277f3a67f5"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Dave Li</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Influencer
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Maria Ramovic</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Runner
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/photo-1566411520896-01e7ca4726af?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Hitney Wouston</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              Singer
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Hans Burger</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              10x Developer
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------
+            Charts
+---------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              Charts
+            </h2>
+            <div class="grid gap-6 mb-8 md:grid-cols-2">
+              <div
+                class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+              >
+                <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                  Revenue
+                </h4>
+                <canvas id="pie"></canvas>
+                <div
+                  class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400"
+                >
+                  <!-- Chart legend -->
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"
+                    ></span>
+                    <span>Shirts</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"
+                    ></span>
+                    <span>Shoes</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
+                    ></span>
+                    <span>Bags</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+              >
+                <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                  Traffic
+                </h4>
+                <canvas id="line"></canvas>
+                <div
+                  class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400"
+                >
+                  <!-- Chart legend -->
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"
+                    ></span>
+                    <span>Organic</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
+                    ></span>
+                    <span>Paid</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ------------------------      quiz system ---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+   
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/init-alpine.js"></script>
+   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/charts-lines.js" defer></script>
+    <script src="./assets/js/charts-pie.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+
+<body class="h-screen bg-gray-200  dark:bg-purple-800   flex flex-wrap items-center  justify-center  ">
+            <div class="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3    bg-white  shadow-lg    transform   duration-200 easy-in-out">
+               
+                <div class=" ">
+                    <div class="text-center px-14">
+                        <h2 class="text-gray-800 text-3xl font-bold">What does HTML stand for?</h2>
+                    </div>
+                    <hr class="mt-6" />
+                    <div class="flex  bg-gray-50 ">
+                       
+<ul class="grid w-full gap-6 md:grid-cols-2">
+    <li>
+        <input type="radio" id="hosting-small" name="hosting" value="hosting-small" class="hidden peer" required />
+        <label for="hosting-small" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-purple-500 peer-checked:border-purple-600 peer-checked:text-purple-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+            <div class="block">
+                <div class="w-full">Hyper Transfer Markup Language</div>
+            </div>
+            <svg class="w-5 h-5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.219,1.688c-4.471,0-8.094,3.623-8.094,8.094s3.623,8.094,8.094,8.094s8.094-3.623,8.094-8.094S14.689,1.688,10.219,1.688 M10.219,17.022c-3.994,0-7.242-3.247-7.242-7.241c0-3.994,3.248-7.242,7.242-7.242c3.994,0,7.241,3.248,7.241,7.242C17.46,13.775,14.213,17.022,10.219,17.022 M15.099,7.03c-0.167-0.167-0.438-0.167-0.604,0.002L9.062,12.48l-2.269-2.277c-0.166-0.167-0.437-0.167-0.603,0c-0.166,0.166-0.168,0.437-0.002,0.603l2.573,2.578c0.079,0.08,0.188,0.125,0.3,0.125s0.222-0.045,0.303-0.125l5.736-5.751C15.268,7.466,15.265,7.196,15.099,7.03"/>
+            </svg>
+        </label>
+    </li>
+    <li>
+        <input type="radio" id="hosting-big" name="hosting" value="hosting-big" class="hidden peer">
+        <label for="hosting-big" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-purple-500 peer-checked:border-purple-600 peer-checked:text-purple-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div class="block">
+                <div class="w-full">Hyper Text Markup Language</div>
+            </div>
+            <svg class="w-5 h-5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.219,1.688c-4.471,0-8.094,3.623-8.094,8.094s3.623,8.094,8.094,8.094s8.094-3.623,8.094-8.094S14.689,1.688,10.219,1.688 M10.219,17.022c-3.994,0-7.242-3.247-7.242-7.241c0-3.994,3.248-7.242,7.242-7.242c3.994,0,7.241,3.248,7.241,7.242C17.46,13.775,14.213,17.022,10.219,17.022 M15.099,7.03c-0.167-0.167-0.438-0.167-0.604,0.002L9.062,12.48l-2.269-2.277c-0.166-0.167-0.437-0.167-0.603,0c-0.166,0.166-0.168,0.437-0.002,0.603l2.573,2.578c0.079,0.08,0.188,0.125,0.3,0.125s0.222-0.045,0.303-0.125l5.736-5.751C15.268,7.466,15.265,7.196,15.099,7.03"/>
+            </svg>
+        </label>
+    </li>
+    <li>
+      <input type="radio" id="hosting-big" name="hosting" value="hosting-big" class="hidden peer">
+      <label for="hosting-big" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-purple-500 peer-checked:border-purple-600 peer-checked:text-purple-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <div class="block">
+              <div class="w-full">Hyperlink and Text Markup Language</div>
+          </div>
+          <svg class="w-5 h-5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.219,1.688c-4.471,0-8.094,3.623-8.094,8.094s3.623,8.094,8.094,8.094s8.094-3.623,8.094-8.094S14.689,1.688,10.219,1.688 M10.219,17.022c-3.994,0-7.242-3.247-7.242-7.241c0-3.994,3.248-7.242,7.242-7.242c3.994,0,7.241,3.248,7.241,7.242C17.46,13.775,14.213,17.022,10.219,17.022 M15.099,7.03c-0.167-0.167-0.438-0.167-0.604,0.002L9.062,12.48l-2.269-2.277c-0.166-0.167-0.437-0.167-0.603,0c-0.166,0.166-0.168,0.437-0.002,0.603l2.573,2.578c0.079,0.08,0.188,0.125,0.3,0.125s0.222-0.045,0.303-0.125l5.736-5.751C15.268,7.466,15.265,7.196,15.099,7.03"/>
+          </svg>
+      </label>
+  </li>
+  <li>
+    <input type="radio" id="hosting-big" name="hosting" value="hosting-big" class="hidden peer">
+    <label for="hosting-big" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-purple-500 peer-checked:border-purple-600 peer-checked:text-purple-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div class="block">
+            <div class="w-full">High Transfer Markup Language</div>
+        </div>
+        <svg class="w-5 h-5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.219,1.688c-4.471,0-8.094,3.623-8.094,8.094s3.623,8.094,8.094,8.094s8.094-3.623,8.094-8.094S14.689,1.688,10.219,1.688 M10.219,17.022c-3.994,0-7.242-3.247-7.242-7.241c0-3.994,3.248-7.242,7.242-7.242c3.994,0,7.241,3.248,7.241,7.242C17.46,13.775,14.213,17.022,10.219,17.022 M15.099,7.03c-0.167-0.167-0.438-0.167-0.604,0.002L9.062,12.48l-2.269-2.277c-0.166-0.167-0.437-0.167-0.603,0c-0.166,0.166-0.168,0.437-0.002,0.603l2.573,2.578c0.079,0.08,0.188,0.125,0.3,0.125s0.222-0.045,0.303-0.125l5.736-5.751C15.268,7.466,15.265,7.196,15.099,7.03"/>
+        </svg>
+    </label>
+</li>
+</ul>
+
+
+                    
+</div>
+            </div>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+openai nodejs chat bot example
+
+
+
+
+const OpenAI = require('openai').OpenAI;
+
+////////////////////////////////
+const openai = new OpenAI();
+
+async function f() {
+    const completion = await openai.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: "You are a helpful assistant designed to output JSON.",
+          },
+          { role: "user", content: "Who won the world series in 2020?" },
+        ],
+        model: "text-davinci-003",
+        response_format: { type: "json_object" },
+      });
+      console.log(completion.choices[0].message.content);
+    }
+    
+f();
+
+
+//////////////////////////////////////////
+
+document.getElementById("AIscaduale").addEventListener("click", AIscaduale);
+const express = require('express')
+
+require("dotenv").config();
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+// Access your API key as an environment variable (see "Set up your API key" above)
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+
+async function AIscaduale() {
+  // For text-only input, use the gemini-pro model
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+  const prompt = " (make a spreedsheet to a School takes a list of teachers names and thier subjects and thier classes as input . then make a spreedsheets for scaduale for Classes in each class spreedsheet{teachers names , thier subjects , teaching time}) INPUT({name:ahmed subject:math class:C1},{name:mohamed subject:physics class:C2},{name:Sohib subject:Chimstry class:C1},{name:Mohab subject:math class:C4}) OUTPUT as json";
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
+AIscaduale()
+
+
+
+
+
+
+json//////////////////////////////////////////////
+
+
+ const result = await chat.sendMessage(msg);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+
+
+
+
+
+
+
+
+
+
+model////////////////////////////////////////////////////////////////////
+
+
+const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+
+
+
+
+
+  excel //////////////////////////////////////////////////////////////////
+
+
+  const workbook = new ExcelJS.Workbook();
+
+// Add a worksheet
+const worksheet = workbook.addWorksheet('My Sheet');
+
+// Define some data
+const datae = [
+  ['Name', 'Age', 'Gender'],
+  ['John', 30, 'Male'],
+  ['Alice', 25, 'Female'],
+  ['Bob', 35, 'Male']
+];
+
+// Add data to the worksheet
+worksheet.addRows(datae);
+
+// Save the workbook to a file
+workbook.xlsx.writeFile('data.xlsx')
+  .then(function() {
+    console.log('Excel file created successfully.');
+  })
+  .catch(function(error) {
+    console.log('Error creating Excel file:', error);
+  });
