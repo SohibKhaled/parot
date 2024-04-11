@@ -9,6 +9,27 @@ require("dotenv").config();
 const ExcelJS = require('exceljs');
 const fs = require('fs');
 const { google } =  require("googleapis");
+const session = require('express-session');
+const app = express();
+
+
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true
+})); // Configure session settings
+
+app.get('/some-route', (req, res) => {
+    // Get the 'id' value from the session
+    const id = req.session.id;
+
+    // Set the 'id' value in the session
+    req.session.id = 'new-id';
+
+    console.log('ID from session:', id);
+    res.send('Session variable accessed and set');
+});
+
 
 // Google drive test 
 const oauth2Client = new google.auth.OAuth2(
@@ -22,7 +43,6 @@ const oauth2Client = new google.auth.OAuth2(
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
 const server = http.createServer(app);
 app.set('view engine', 'ejs');
 
@@ -139,11 +159,13 @@ qr.toFile("qr_test.png",stJson,function(err)
 
 
 // Define a route to render the EJS file
-app.get('/', (req, res) => {
+app.get('/dashboard', (req, res) => {
     res.render('index', ); // Pass data to the EJS file
 });
 
-
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,  'landing.html'));
+});
 
 
 

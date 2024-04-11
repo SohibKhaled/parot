@@ -6,6 +6,7 @@
     <title>QuickMeet Room</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="PLogo.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
     <script
@@ -41,11 +42,11 @@
     <div class="container-room">
         <div class="left-cont">
 
-            <div class="video-cont-single" id="vcont">
-                <div class="video-box">
-                    <video class="video-frame" id="vd1" autoplay playsinline>
+            <div class="h-full" id="vcont">
+                <div class="bg-[#353b48] h-full min-h-[100px] w-full rounded-[5px] relative">
+                    <video class="bg-[#353b48] h-full min-h-[100px] w-full object-cover rounded-[5px]" id="vd1" autoplay playsinline>
                     </video>
-                    <div class="nametag" id="myname">yourname</div>
+                    <div class="text-[white] bottom-[10px] absolute left-[10px]" id="myname">yourname</div>
                     <div class="mute-icon" id="mymuteicon"><i class="fas fa-microphone-slash"></i></div>
                     <div class="video-off" id="myvideooff">Video Off</div>
                 </div>
