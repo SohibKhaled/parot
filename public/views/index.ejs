@@ -67,7 +67,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="session.html"
+                href="/session"
               >
                 <svg
                   class="w-5 h-5"
@@ -89,7 +89,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="quiz.html"
+                href="/quiz"
               >
                 <svg
                   class="w-5 h-5"
@@ -158,19 +158,19 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="login.html">Login</a>
+                    <a class="w-full" href="/login">Login</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="register.html">
+                    <a class="w-full" href="/register">
                       Create account
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="forgot.html">
+                    <a class="w-full" href="/forgot">
                       Forgot password
                     </a>
                   </li>
@@ -180,7 +180,7 @@
             </li>
           </ul>
           <div class="px-6 my-6">
-            <a href="register.html">  <button
+            <a href="/register">  <button
               class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
             >
               Create account
@@ -248,7 +248,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="session.html"
+                href="/session"
               >
                 <svg
                   class="w-5 h-5"
@@ -270,7 +270,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="quiz.html"
+                href="/quiz"
               >
                 <svg
                   class="w-5 h-5"
@@ -343,19 +343,19 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="login.html">Login</a>
+                    <a class="w-full" href="/login">Login</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="register.html">
+                    <a class="w-full" href="/register">
                       Create account
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="forgot.html">
+                    <a class="w-full" href="/forgot">
                       Forgot password
                     </a>
                   </li>
@@ -543,7 +543,7 @@
                 >
                   <img
                     class="object-cover w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                    src="/sohib.jpeg"
                     alt=""
                     aria-hidden="true"
                   />
@@ -561,7 +561,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="#"
+                        href="/profile"
                       >
                         <svg
                           class="w-4 h-4 mr-3"
@@ -1461,23 +1461,35 @@
 
     if(chatWidget.classList.remove('hidden') == true){
       chatWidget.classList.add('hidden');
+
+      console.log("it.s open")
     }
-    if(  chatWidget.classList.add('hidden') == true){
+    if(chatWidget.classList.add('hidden') == true){
       chatWidget.classList.remove('hidden');
+
+      console.log("it.s closed")
+
     }
+    chatWidget.classList.add('hidden');
     chatWidget.classList.remove('hidden');
+
   });
 
   closeChatBtn.addEventListener('click', () => {
     chatWidget.classList.add('hidden');
+    console.log("it.s closed 2")
+
   });
 
   // Example function to handle sending a message
   function sendMessage() {
     const message = userInput.value.trim();
     if (message !== '') {
-      // Simulate sending message to bot (replace with actual API call)
+      
       appendMessage('You', message);
+      receiveMessage('Bot' , 'hello my name is parot , i am an educational system')
+      // Simulate sending message to bot (replace with actual API call)
+      
       userInput.value = '';
     }
   }
@@ -1507,6 +1519,7 @@
 
   // Example usage
   receiveMessage('Bot', 'Hello! How can I help you today?');
+
 
 
 

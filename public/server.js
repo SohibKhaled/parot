@@ -138,18 +138,7 @@ app.get('/runai', (req, res) => {
 //}
 
 const io = socketio(server);
-let data =  "http://"+ip.address()+":3000/profile.html";
 
-let stJson = JSON.stringify(data);
-qr.toString(stJson,{type:"terminal"},function(err,code)
-{
-    if(err) return console.log("error");
-    console.log(code);
-})
-qr.toFile("qr_test.png",stJson,function(err)
-{
-    if(err) return console.log("error");
-})
 
 
 
@@ -163,11 +152,40 @@ app.get('/dashboard', (req, res) => {
     res.render('index', ); // Pass data to the EJS file
 });
 
+
+// Pages routes
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,  'landing.html'));
 });
 
-
+app.get('/quiz', (req, res) => {
+    res.sendFile(path.join(__dirname,  'quiz.html'));
+});
+app.get('/session', (req, res) => {
+    res.sendFile(path.join(__dirname,  'session.html'));
+});
+app.get('/schoolpay', (req, res) => {
+    res.sendFile(path.join(__dirname,  'schoolpay.html'));
+});
+app.get('/universitypay', (req, res) => {
+    res.sendFile(path.join(__dirname,  'universitypay.html'));
+});
+app.get('/educationalorgpay', (req, res) => {
+    res.sendFile(path.join(__dirname,  'educationalorgpay.html'));
+});
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname,  'login.html'));
+});
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname,  'register.html'));
+});
+app.get('/forgot', (req, res) => {
+    res.sendFile(path.join(__dirname,  'forgot.html'));
+});
+app.get('/profile', (req, res) => {
+    res.sendFile(path.join(__dirname,  'profile.html'));
+});
 
 
 
@@ -274,5 +292,17 @@ io.on('connect', socket => {
     });
 })
 
+let data =  "https://parotedu.me/profile";
+
+let stJson = JSON.stringify(data);
+qr.toString(stJson,{type:"terminal"},function(err,code)
+{
+    if(err) return console.log("error");
+    console.log(code);
+})
+qr.toFile("qr_test.png",stJson,function(err)
+{
+    if(err) return console.log("error");
+})
 
 server.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));
