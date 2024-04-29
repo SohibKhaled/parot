@@ -29,7 +29,7 @@
       <aside
         class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
       >
-        <div class="py-4 text-gray-500 dark:text-gray-400">
+        <div class="py-4 text-gray-600 dark:text-gray-200 dark:text-gray-400">
           <a href="/Dashboard" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
                     PAROT    
@@ -152,7 +152,7 @@
                   x-transition:leave="transition-all ease-in-out duration-300"
                   x-transition:leave-start="opacity-100 max-h-xl"
                   x-transition:leave-end="opacity-0 max-h-0"
-                  class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                  class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-600 dark:text-gray-200 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
                   <li
@@ -213,7 +213,7 @@
         @click.away="closeSideMenu"
         @keydown.escape="closeSideMenu"
       >
-        <div class="py-4 text-gray-500 dark:text-gray-400">
+        <div class="py-4 text-gray-600 dark:text-gray-200 dark:text-gray-400">
           <a href="" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
             PAROT    
@@ -337,7 +337,7 @@
                   x-transition:leave="transition-all ease-in-out duration-300"
                   x-transition:leave-start="opacity-100 max-h-xl"
                   x-transition:leave-end="opacity-0 max-h-0"
-                  class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                  class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-600 dark:text-gray-200 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
                   <li
@@ -400,30 +400,7 @@
             </button>
             <!-- Search input -->
             <div class="flex justify-center flex-1 lg:mr-32">
-              <div
-                class="relative w-full max-w-xl mr-6 focus-within:text-purple-500"
-              >
-                <div class="absolute inset-y-0 flex items-center pl-2">
-                  <svg
-                    class="w-4 h-4"
-                    aria-hidden="true"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <input
-                  class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
-                  type="text"
-                  placeholder="Search for projects"
-                  aria-label="Search"
-                />
-              </div>
+              
             </div>
             <ul class="flex items-center flex-shrink-0 space-x-6">
               <!-- Theme toggler -->
@@ -732,36 +709,17 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">2</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
-                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                            <div
-                              class="event bg-purple-400 text-white rounded p-1 text-sm mb-1"
-                            >
-                              <span class="event-name">
-                                Meeting
-                              </span>
-                              <span class="time">
-                                12:00~14:00
-                              </span>
-                            </div>
-                            <div
-                              class="event bg-purple-400 text-white rounded p-1 text-sm mb-1"
-                            >
-                              <span class="event-name">
-                                Meeting
-                              </span>
-                              <span class="time">
-                                18:00~20:00
-                              </span>
-                            </div>
-                          </div>
+                         
                         </div>
                       </td>
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">3</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -769,7 +727,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">4</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -777,31 +736,26 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">6</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-                        </div>
-                      </td>
-                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-                          <div class="top h-5 w-full">
-                          </div>
-                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                            <div
-                              class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-                            >
-                              <span class="event-name">
-                                Shopping
-                              </span>
-                              
-                            </div>
-                          </div>
                         </div>
                       </td>
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500 text-sm">8</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+                          </div>
+                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                        </div>
+                      </td>
+                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                          <div class="top h-5 w-full">
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -813,7 +767,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">9</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -839,7 +794,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">2</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -847,7 +803,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">3</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -855,7 +812,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">4</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -863,37 +821,36 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">6</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-                        </div>
-                      </td>
-                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-                          <div class="top h-5 w-full">
-                            <span class="text-gray-500">7</span>
-                          </div>
-                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                           
-                          </div>
                         </div>
                       </td>
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500 text-sm">8</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
                       </td>
-                   
-          
-                   
-                 
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">9</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+                          </div>
+                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                        </div>
+                      </td>
+
+                        <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                          <div class="top h-5 w-full">
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -920,7 +877,8 @@
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500">2</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
                         <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                       </div>
@@ -928,26 +886,17 @@
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500">3</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
-                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                          <div
-                          class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-                        >
-                          <span class="event-name">
-                            Shopping
-                          </span>
-                          <span class="time">
-                            12:00~14:00
-                          </span>
-                        </div>
-                        </div>
+                      
                       </div>
                     </td>
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500">4</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
                         <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                       </div>
@@ -955,46 +904,35 @@
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500">6</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
                         <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-                      </div>
-                    </td>
-                    <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-                      <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-                        <div class="top h-5 w-full">
-                          <span class="text-gray-500">7</span>
-                        </div>
-                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                          <div
-                            class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-                          >
-                            <span class="event-name">
-                              Shopping
-                            </span>
-                            <span class="time">
-                              12:00~14:00
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     </td>
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500 text-sm">8</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
                         <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                       </div>
                     </td>
-                 
-        
-                 
-               
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-gray-500">9</span>
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+                        </div>
+                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                      </div>
+                    </td>
+                    <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                      <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                        <div class="top h-5 w-full">
+                          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                         </div>
                         <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                       </div>
@@ -1022,7 +960,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">2</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -1030,7 +969,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">3</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -1038,7 +978,8 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">4</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -1046,46 +987,36 @@
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">6</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-                        </div>
-                      </td>
-                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-                          <div class="top h-5 w-full">
-                            <span class="text-gray-500">7</span>
-                          </div>
-                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                            <div
-                              class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-                            >
-                              <span class="event-name">
-                                Shopping
-                              </span>
-                              <span class="time">
-                                12:00~14:00
-                              </span>
-                            </div>
-                          </div>
                         </div>
                       </td>
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500 text-sm">8</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+                          </div>
+                          <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                        </div>
+                      </td>
+                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                        <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                          <div class="top h-5 w-full">
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
                       </td>
                    
-          
-                   
-                 
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-gray-500">9</span>
+                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
                           </div>
                           <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
                         </div>
@@ -1110,7 +1041,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">2</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1118,7 +1050,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">3</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1126,7 +1059,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">4</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1134,46 +1068,35 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">6</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-    </div>
-  </td>
-  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-      <div class="top h-5 w-full">
-        <span class="text-gray-500">7</span>
-      </div>
-      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-        <div
-          class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-        >
-          <span class="event-name">
-            Shopping
-          </span>
-          <span class="time">
-            12:00~14:00
-          </span>
-        </div>
-      </div>
     </div>
   </td>
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500 text-sm">8</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
   </td>
-
-
-
-
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">9</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+      </div>
+      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+    </div>
+  </td>
+  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+      <div class="top h-5 w-full">
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1202,7 +1125,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">2</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1210,7 +1134,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">3</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1218,7 +1143,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">4</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1226,46 +1152,35 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">6</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-    </div>
-  </td>
-  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-      <div class="top h-5 w-full">
-        <span class="text-gray-500">7</span>
-      </div>
-      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-        <div
-          class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-        >
-          <span class="event-name">
-            Shopping
-          </span>
-          <span class="time">
-            12:00~14:00
-          </span>
-        </div>
-      </div>
     </div>
   </td>
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500 text-sm">8</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
   </td>
-
-
-
-
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">9</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+      </div>
+      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+    </div>
+  </td>
+  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+      <div class="top h-5 w-full">
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1283,7 +1198,9 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Saterday</b></span>
+        <span class="text-black xl:block lg:block md:block sm:block hidden dark:text-white"><b>Saterday</b></span>
+        <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Sat</b></span>
+
       </div>
 
     </div>
@@ -1292,7 +1209,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">2</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1300,7 +1218,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">3</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1308,7 +1227,8 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20  mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">4</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
@@ -1316,46 +1236,35 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">6</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
-    </div>
-  </td>
-  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
-    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
-      <div class="top h-5 w-full">
-        <span class="text-gray-500">7</span>
-      </div>
-      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-        <div
-          class="event bg-blue-400 text-white rounded p-1 text-sm mb-1"
-        >
-          <span class="event-name">
-            Shopping
-          </span>
-          <span class="time">
-            12:00~14:00
-          </span>
-        </div>
-      </div>
     </div>
   </td>
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500 text-sm">8</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
   </td>
-
-
-
-
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-gray-500">9</span>
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+      </div>
+      <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+    </div>
+  </td>
+  <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+    <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+      <div class="top h-5 w-full">
+        <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200">Math</span>
+        <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
       </div>
       <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
     </div>
