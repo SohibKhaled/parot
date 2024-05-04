@@ -22,7 +22,7 @@ const Subject = require('./DB/subject')
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://elerning:PAROT@cluster0.uohqav3.mongodb.net/E-Learning?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.DB_KEY)
 .then(() => {
   console.log('')
   console.log('You are connected to the database!')
