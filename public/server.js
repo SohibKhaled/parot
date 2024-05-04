@@ -13,6 +13,91 @@ const session = require('express-session');
 const app = express();
 
 
+//////////////////////////
+
+const mongoose = require('mongoose')
+const Student = require('./DB/student')
+const Table = require('./DB/table')
+const Subject = require('./DB/subject')
+
+app.use(express.json());
+
+mongoose.connect('mongodb+srv://elerning:PAROT@cluster0.uohqav3.mongodb.net/E-Learning?retryWrites=true&w=majority&appName=Cluster0')
+.then(() => {
+  console.log('')
+  console.log('You are connected to the database!')
+  console.log('To stop the connection press "ctrl + C"')
+}).catch((error) => {
+  console.log(error)
+})
+
+
+
+/////////student /////////
+
+app.post('/students', async(req, res) => {
+   
+    const newUser = new Student({
+        email: "Ahmed@parot.com",
+        name: "Ahmed Hassan",
+        id: "201900043",
+      });
+      console.log(req.body.email)
+      newUser.save()
+})
+
+app.get('/students', async(req, res) => {
+  try {
+    const students = await Student.find({});
+    res.status(200).json(students);
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+})
+
+app.get('/students/:_id', async(req, res) => {
+  try {
+    const {id} = req.params;
+    const student = await Student.findById(id);
+    res.status(200).json(student);
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+})
+
+
+////////table//////////
+
+app.get('/table', async(req, res) => {
+    try {
+      const table = await Table.find({});
+      res.status(200).json(table);
+    } catch (error) {
+      res.status(500).json({message: error.message})
+    }
+  })
+
+///////////subject/////////
+
+
+app.get('/subject', async(req, res) => {
+    try {
+      const subject = await Subject.find({});
+      res.status(200).json(subject);
+    } catch (error) {
+      res.status(500).json({message: error.message})
+    }
+  })
+
+
+
+//////////////////
+
+
+
+
+
+
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
@@ -106,13 +191,13 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
-async function AIscaduale() {
+async function AIschedule() {
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
   
 
-  const prompt = " (make a spreedsheet to a School takes a list of teachers names and thier subjects and thier classes as input . then make a spreedsheets for scaduale for Classes in each class spreedsheet{teachers names , thier subjects , teaching time}) INPUT({name:ahmed subject:math class:C1},{name:mohamed subject:physics class:C2},{name:Sohib subject:Chimstry class:C1},{name:Mohab subject:math class:C4}) (donot print any thing else output) OUTPUT as json file have(techername , class , subject , time)";
+  const prompt = " (make a spreadsheet to a School takes a list of teachers names and thier subjects and thier classes as input . then make a spreedsheets for scaduale for Classes in each class spreedsheet{teachers names , thier subjects , teaching time}) INPUT({name:ahmed subject:math class:C1},{name:mohamed subject:physics class:C2},{name:Sohib subject:Chimstry class:C1},{name:Mohab subject:math class:C4}) (donot print any thing else output) OUTPUT as json file have(techername , class , subject , time)";
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
@@ -125,17 +210,38 @@ async function AIscaduale() {
 
 
 
+async function Bot(m) {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  
+    const prompt = " i am a educational system named 'PAROT' the role of sening message is a student or teacher , don't give him any information about any thing other than this information 'to make a session you will go to create session page and click on create session then give your sisson code to your partner' this is a student message => "+ m ;
+    const result = await model.generateContent(prompt);
+    const response =  result.response;
+    const text =  response.text();
+    return text;
+  }
+
+  module.exports = Bot;
+
 
 
 app.get('/runai', (req, res) => {
     // Execute the function
-    AIscaduale()
+    AIschedule()
 ;
     res.send('Function executed successfully');
   });
 //if (process.env.NODE_ENV === 'development') {
-    console.log('***** IP:', ip.address());
+  /*  console.log('***** IP:', ip.address()); */
 //}
+
+ app.get('/Bot1/:message',async (req, res) => {
+    me = req.params.message;
+    // Execute the function
+   resp1 = await Bot(me);
+res.send(resp1);
+
+});
 
 const io = socketio(server);
 
@@ -149,7 +255,13 @@ const io = socketio(server);
 
 // Define a route to render the EJS file
 app.get('/dashboard', (req, res) => {
-    res.render('index', ); // Pass data to the EJS file
+    const user = {
+        firstName: 'Tim',
+        lastName: 'Cook',
+    }
+    res.render('index',{
+        user: user
+    } ); // Pass data to the EJS file
 });
 
 
@@ -298,7 +410,7 @@ let stJson = JSON.stringify(data);
 qr.toString(stJson,{type:"terminal"},function(err,code)
 {
     if(err) return console.log("error");
-    console.log(code);
+    /*console.log(code);*/
 })
 qr.toFile("qr_test.png",stJson,function(err)
 {
