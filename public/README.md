@@ -3,9 +3,12 @@
 ## Current Features?
 
 1. Video Calls
-2. Chatbox
+2. AI Chatbox
 3. Collaborative Whiteboard
-4. Screensharing
+4. Screen Sharing
+5. Quiz
+6. AI Schedule Generation
+7. QR Code
 
 
 ## run server?
