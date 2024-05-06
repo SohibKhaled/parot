@@ -704,16 +704,32 @@
                           </div>                 
                         </div>
                       </td>                     
-                      <% for (let i = 0; i < 7; i++) { %>
+                      <% var k = []; %>           
+                      <% var s = []; %>           
+
+                      <% for (let sub of table) { %>    
+                        <% if ( sub.Day == "sunday") { %>
+                        <% for( let i = 8; i <= 14; i++ ) { %>
+                          <% if ( sub.Time == i) { %>     
+                          <% if (k[i] == null) {%>      
+                           <%  k[i] = sub.Sname%> 
+                           <%  s[i] = sub.Short%>     
+    
+                            <% } %>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% for( let j = 8; j <= 14; j++ ) { %>            
                         <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                           <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                             <div class="top h-5 w-full">
-                              <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.firstName %></span>
-                              <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
-                            </div>                           
+                              <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                              <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
+                            </div>       
                           </div>
-                        </td>                        
-                    <% } %>
+                        </td>
+                       <% } %>
                     </tr> 
   
                     
@@ -721,7 +737,43 @@
           
                    <!--         line 2 -->
 
-                    
+                   <tr class="text-center h-20">
+                    <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                      <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                        <div class="top h-5 w-full">
+                          <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Monday</b></span>
+                        </div>
+                
+                      </div>
+                    </td>
+        <% var k = []; %>  
+        <% var s = []; %>           
+         
+                    <% for (let sub of table) { %>    
+                      <% if ( sub.Day == "monday") { %>
+                      <% for( let i = 8; i <= 14; i++ ) { %>
+                        <% if ( sub.Time == i) { %>     
+                        <% if (k[i] == null) {%>      
+                         <%  k[i] = sub.Sname%>
+                         <%  s[i] = sub.Short%>     
+     
+                          <% } %>
+                      <% } %>
+                      <% } %>
+                      <% } %>
+                      <% } %>
+                      <% for( let j = 8; j <= 14; j++ ) { %>            
+                      <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                        <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
+                          <div class="top h-5 w-full">
+                            <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                            <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
+                          </div>       
+                        </div>
+                      </td>
+                     <% } %>
+                  </tr> 
+                  
                    <tr class="text-center h-20">
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
@@ -732,18 +784,32 @@
                       </div>
                     </td>
                    
-                    <% for (let i = 0; i < 7; i++) { %>
-
+                    <% var k = []; %>  
+                    <% var s = []; %>           
+         
+                    <% for (let sub of table) { %>    
+                      <% if ( sub.Day == "tuesday") { %>
+                      <% for( let i = 8; i <= 14; i++ ) { %>
+                        <% if ( sub.Time == i) { %>     
+                        <% if (k[i] == null) {%>      
+                         <%  k[i] = sub.Sname%> 
+                         <%  s[i] = sub.Short%>     
+    
+                          <% } %>
+                      <% } %>
+                      <% } %>
+                      <% } %>
+                      <% } %>
+                      <% for( let j = 8; j <= 14; j++ ) { %>            
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.firstName %></span>
-                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
-                          </div>
-                         
+                            <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                             <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
+                          </div>       
                         </div>
                       </td>
-                  <% } %>
+                     <% } %>
                   </tr> 
                   
                   
@@ -762,18 +828,32 @@
                           </div>
                         </div>
                       </td>
-                      <% for (let i = 0; i < 7; i++) { %>
+                      <% var k = []; %>  
+                      <% var s = []; %>           
+         
+                      <% for (let sub of table) { %>    
+                        <% if ( sub.Day == "wednesday") { %>
+                        <% for( let i = 8; i <= 14; i++ ) { %>
+                          <% if ( sub.Time == i) { %>     
+                          <% if (k[i] == null) {%>      
+                           <%  k[i] = sub.Sname%>     
+                           <%  s[i] = sub.Short%>     
+
+                            <% } %>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% for( let j = 8; j <= 14; j++ ) { %>            
                         <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                           <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                             <div class="top h-5 w-full">
-                              <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.firstName %></span>
-                              <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
-                            </div>
-                           
+                              <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                               <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
+                            </div>       
                           </div>
                         </td>
-                        
-                    <% } %>
+                       <% } %>
                     </tr> 
                     
                     
@@ -785,20 +865,36 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Thresday</b></span>
+        <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Thursday</b></span>
       </div>
     </div>
   </td>
-  <% for (let i = 0; i < 7; i++) { %>
+  <% var k = []; %> 
+  <% var s = []; %>           
+          
+  <% for (let sub of table) { %>    
+    <% if ( sub.Day == "thursday") { %>
+    <% for( let i = 8; i <= 14; i++ ) { %>
+      <% if ( sub.Time == i) { %>     
+      <% if (k[i] == null) {%>      
+       <%  k[i] = sub.Sname%>    
+       <%  s[i] = sub.Short%>     
+ 
+        <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% for( let j = 8; j <= 14; j++ ) { %>            
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.firstName %></span>
-          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>
-    </td>   
-<% } %>
+    </td>
+   <% } %>
 </tr> 
 
 
@@ -819,16 +915,33 @@
 
     </div>
   </td>
-  <% for (let i = 0; i < 7; i++) { %>
+  
+  <% var k = []; %> 
+  <% var s = []; %>           
+          
+  <% for (let sub of table) { %>    
+    <% if ( sub.Day == "friday") { %>
+    <% for( let i = 8; i <= 14; i++ ) { %>
+      <% if ( sub.Time == i) { %>     
+      <% if (k[i] == null) {%>      
+       <%  k[i] = sub.Sname%>    
+       <%  s[i] = sub.Short%>     
+ 
+        <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% for( let j = 8; j <= 14; j++ ) { %>            
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.lastName %></span>
-          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>
-    </td>   
-<% } %>
+    </td>
+   <% } %>
 </tr> 
 
 
@@ -842,22 +955,39 @@
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:block hidden dark:text-white"><b>Saterday</b></span>
+        <span class="text-black xl:block lg:block md:block sm:hidden dark:text-white"><b>Saturday</b></span>
         <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Sat</b></span>
       </div>
     </div>
   </td>
-  <% for (let i = 0; i < 7; i++) { %>
+  <% var k = []; %>   
+  <% var s = []; %>           
+        
+  <% for (let sub of table) { %>    
+    <% if ( sub.Day == "saturday") { %>
+    <% for( let i = 8; i <= 14; i++ ) { %>
+      <% if ( sub.Time == i) { %>     
+      <% if (k[i] == null) {%>      
+       <%  k[i] = sub.Sname%>  
+       <%  s[i] = sub.Short%>  
+            
+   
+   
+        <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+    <% for( let j = 8; j <= 14; j++ ) { %>  
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:block hidden text-gray-600 dark:text-gray-200"><%= user.lastName %></span>
-          <span class="xl:hidden lg:hidden md:hidden sm:hidden block text-gray-600 dark:text-gray-200">M</span>
+          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>
     </td>
-    
-<% } %>
+   <% } %>
 </tr> 
 
                   </tbody>

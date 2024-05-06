@@ -10,7 +10,20 @@ const tableSchema = mongoose.Schema(
         Sid: {
             type: String,
             required: true
-        }
+        },
+        Time: {
+            type: Number,
+            required: true
+        },
+        Day: {
+            type: String,
+            required: true
+        },
+        Short: {
+            type: String,
+            required: true
+        },
+
     },
     {
         timestamps: true

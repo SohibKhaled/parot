@@ -11,6 +11,12 @@ const studentSchema = mongoose.Schema(
             required: true
 
         },
+        teacherName: {
+            type: String,
+            required: true
+
+        },
+        
        
         
 

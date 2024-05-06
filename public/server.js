@@ -48,12 +48,19 @@ app.post('/students', async(req, res) => {
 
 app.get('/students', async(req, res) => {
   try {
-    const students = await Student.find({});
+    const students = await Student.find();
     res.status(200).json(students);
+
+    studentNames = [];
+    students.forEach(student => studentNames.push(student.name , student.teacherName));
+    console.log(studentNames)
   } catch (error) {
     res.status(500).json({message: error.message})
   }
 })
+
+
+
 
 app.get('/students/:_id', async(req, res) => {
   try {
@@ -68,14 +75,19 @@ app.get('/students/:_id', async(req, res) => {
 
 ////////table//////////
 
+
 app.get('/table', async(req, res) => {
     try {
       const table = await Table.find({});
+      table.forEach(table => Sname1.push(table.Sname , table.Day));
+      console.log(Sname1)
       res.status(200).json(table);
     } catch (error) {
       res.status(500).json({message: error.message})
-    }
+    } 
   })
+
+
 
 ///////////subject/////////
 
@@ -245,23 +257,22 @@ res.send(resp1);
 
 const io = socketio(server);
 
-
-
-
-
-
-
-
-
 // Define a route to render the EJS file
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', async (req, res) => {
+    const table = await Table.find();
+
+    
     const user = {
         firstName: 'Tim',
         lastName: 'Cook',
     }
-    res.render('index',{
+     res.render ('index',{
+        table: table,
         user: user
     } ); // Pass data to the EJS file
+
+   
+
 });
 
 
