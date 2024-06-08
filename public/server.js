@@ -11,6 +11,144 @@ const fs = require('fs');
 const { google } =  require("googleapis");
 const session = require('express-session');
 const app = express();
+const say = require ('say');
+const bodyParser = require('body-parser');
+const { createOrder } = require('./binancePay');
+const { CohereClient } = require("cohere-ai");
+
+const cohere = new CohereClient({
+  token: "Bf8TUvRK2qCn5PodOnu2TtUmQPlJbqfasfOLwKNr", // This is your trial API key
+});
+var stream
+var x
+(async  () => {
+   stream = await cohere.chatStream({
+    model: "command-r-plus",
+    message: " (make a spreadsheet to a School takes a list of teachers names and thier subjects and thier classes as input . then make a spreedsheets for scaduale for Classes in each class spreedsheet{teachers names , thier subjects , teaching time}) INPUT({name:ahmed subject:math class:C1},{name:mohamed subject:physics class:C2},{name:Sohib subject:Chimstry class:C1},{name:Mohab subject:math class:C4}) (donot print any thing else output) OUTPUT as a json code only have(techername , class , subject , time)",
+    temperature: 0.3,
+    chatHistory: [],
+    promptTruncation: "AUTO",
+    connectors: [{"id":"web-search"}]
+  });
+
+  for await (const chat of stream) {
+      if (chat.eventType === "text-generation") {
+         x = process.stdout.write(chat.text);
+      }
+  }
+})();
+
+
+app.use(bodyParser.json());
+
+app.post('/create-order', async (req, res) => {
+  const { totalFee, currency, productDetail, productName } = req.body;
+
+  const orderParams = {
+    merchantTradeNo: `tradeNo-${Date.now()}`, // Ensure the trade number is unique
+    totalFee,
+    currency ,
+    productDetail,
+    productName,
+  };
+
+  try {
+    const result = await createOrder(orderParams);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to create order' });
+  }
+});
+
+app.post('/webhook', (req, res) => {
+  const payload = req.body;
+  // Validate and process the payload here
+
+  res.status(200).send('OK');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+say.export('You moved to Dashboard page', '', 0.75, 'dashboard.wav', (err) => {
+  if (err) {
+    return console.error(err)
+  }
+ 
+  console.log('Text has been saved to dashboard.wav.')
+})
+
+
+
+const { equal } = require('looks-same'); // Or require('pixelmatch')
+
+function comparePhotos(path1, path2, callback) {
+  // Read image files asynchronously
+  fs.readFile(path1, (err1, data1) => {
+    if (err1) {
+      return callback(err1);
+    }
+
+    fs.readFile(path2, (err2, data2) => {
+      if (err2) {
+        return callback(err2);
+      }
+
+
+//this code will be a code soluation
+
+
+
+      // Use chosen library for comparison
+     // equal(data1, data2, (error, result) => {
+      //  if (error) {
+      //    return callback(error);
+      //  }
+
+     //   callback(null, result); // true if same, false otherwise
+    //  });
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+      // OR with pixelmatch (adjust threshold as needed)
+      // pixelmatch(data1, data2, null, width, height, { threshold: 0.1 }, (err, numChangedPixels) => {
+      //   if (err) {
+      //     return callback(err);
+      //   }
+
+      //   const samePerson = numChangedPixels <= threshold; // Adjust threshold for allowed variations
+      //   callback(null, samePerson);
+      // });
+    });
+  });
+}
+
+// Example usage
+const photo1Path = '1.jpeg';
+const photo2Path = '1.jpeg';
+
+comparePhotos(photo1Path, photo2Path, (err, isSamePerson) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('Photos are of the same person:', isSamePerson);
+  }
+});
+
+
 
 
 //////////////////////////
@@ -19,6 +157,7 @@ const mongoose = require('mongoose')
 const Student = require('./DB/student')
 const Table = require('./DB/table')
 const Subject = require('./DB/subject')
+
 
 app.use(express.json());
 
@@ -226,7 +365,7 @@ async function Bot(m) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   
-    const prompt = " i am a educational system named 'PAROT' the role of sening message is a student or teacher , don't give him any information about any thing other than this information 'to make a session you will go to create session page and click on create session then give your sisson code to your partner' this is a student message => "+ m ;
+    const prompt = " i am a educational system named 'PAROT' the role of sening message is a student or teacher , don't give him any information about any thing other than this information 'to make a session you will go to create session page and click on create session then give your session code to your partner','to go to the Quizes you need to go to the Quiz tap on the left side of your screen', 'to go to the Assignments you need to go to the Assignments tap on the left side of your screen' and if he greets you, you can greet them back,  this is a student message => "+ m ;
     const result = await model.generateContent(prompt);
     const response =  result.response;
     const text =  response.text();
@@ -251,6 +390,9 @@ app.get('/runai', (req, res) => {
     me = req.params.message;
     // Execute the function
    resp1 = await Bot(me);
+
+   
+
 res.send(resp1);
 
 });
@@ -281,27 +423,14 @@ app.get('/dashboard', async (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,  'landing.html'));
 });
-
 app.get('/quiz', (req, res) => {
     res.sendFile(path.join(__dirname,  'quiz.html'));
 });
 app.get('/session', (req, res) => {
     res.sendFile(path.join(__dirname,  'session.html'));
 });
-app.get('/schoolpay', (req, res) => {
-    res.sendFile(path.join(__dirname,  'schoolpay.html'));
-});
-app.get('/universitypay', (req, res) => {
-    res.sendFile(path.join(__dirname,  'universitypay.html'));
-});
-app.get('/educationalorgpay', (req, res) => {
-    res.sendFile(path.join(__dirname,  'educationalorgpay.html'));
-});
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname,  'login.html'));
-});
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname,  'register.html'));
+app.get('/Payment', (req, res) => {
+    res.sendFile(path.join(__dirname,  'Payment.html'));
 });
 app.get('/forgot', (req, res) => {
     res.sendFile(path.join(__dirname,  'forgot.html'));
@@ -310,10 +439,15 @@ app.get('/profile', (req, res) => {
     res.sendFile(path.join(__dirname,  'profile.html'));
 });
 
-
-
-
-
+app.get('/lec' ,(req, res) => {
+    res.sendFile(path.join(__dirname,  'lec.html'));
+});
+app.get('/login', (req, res) => {
+  res.render("login");
+});
+app.get('/register', (req, res) => {
+  res.render("register");
+});
 app.use(express.static(path.join(__dirname, '.')));
 
 let rooms = {};
