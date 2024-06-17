@@ -1,32 +1,29 @@
 const mongoose = require('mongoose')
-
-const studentSchema = mongoose.Schema(
+const Schema = mongoose.Schema
+const passportLocalMongoose = require('passport-local-mongoose');
+const studentSchema = Schema(
     {
-        name: {
+       email: {
             type: String,
             required: true
+
+        },
+        password: {
+            type: String,
+            required: true
+
         }, 
-        email: {
+        id: {
             type: String,
             required: true
 
-        },
-        teacherName: {
-            type: String,
-            required: true
-
-        },
-        
-       
-        
-
-       
+        }, 
+    
     },
   
 )
-
+studentSchema.plugin(passportLocalMongoose);
 const Student = mongoose.model('student', studentSchema);
-
 module.exports = Student;
 
 
