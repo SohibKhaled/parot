@@ -8,6 +8,7 @@ const ip = require('ip');
 require("dotenv").config();
 const ExcelJS = require('exceljs');
 const fs = require('fs');
+const fse = require('fs-extra')
 const { google } =  require("googleapis");
 const session = require('express-session');
 const app = express();
@@ -15,9 +16,11 @@ const say = require ('say');
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const requestIp = require('request-ip')
+var multer  = require('multer');
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const bodyParser = require('body-parser');
+const process = require('process');
 const { CohereClient } = require("cohere-ai");
 const mongoose = require('mongoose')
 const Student = require('./DB/student')
@@ -26,10 +29,6 @@ const Subject = require('./DB/subject')
 const cohere = new CohereClient({
   token:  process.env.AI_TOKEN, // This is your trial API key
 });
-var stream
-var x
-
-
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("express-session")({
@@ -37,13 +36,8 @@ app.use(require("express-session")({
     resave: true,
     saveUninitialized: true
 }));
- 
 app.use(passport.initialize());
 app.use(passport.session());
- 
-
- 
-
 app.use(bodyParser.json());
 say.export('You moved to Dashboard page', '', 0.75, 'dashboard.wav', (err) => {
   if (err) {
@@ -75,16 +69,6 @@ mongoose.connect(process.env.DB_KEY)
 }).catch((error) => {
   console.log(error)
 })
-/////////student//////////
-app.post('/students', async(req, res) => {  
-    const newUser = new Student({
-        email: "Ahmed@parot.com",
-        name: "Ahmed Hassan",
-        id: "201900043",
-      });
-      console.log(req.body.email)
-      newUser.save()
-})
 app.get('/students', async(req, res) => {
   try {
     const students = await Student.find();
@@ -109,9 +93,8 @@ app.get('/students/:_id', async(req, res) => {
 app.get('/table', async(req, res) => {
     try {
       const table = await Table.find({});
-      table.forEach(table => Sname1.push(table.Sname , table.Day));
-      console.log(Sname1)
       res.status(200).json(table);
+      console.log(table)
     } catch (error) {
       res.status(500).json({message: error.message})
     } 
@@ -125,18 +108,13 @@ app.get('/subject', async(req, res) => {
       res.status(500).json({message: error.message})
     }
   })
-
   app.use(cookieParser());
-
 //////////////////
 app.use(session({
-    secret: 'PAROT',
+    secret: process.env.SESSION_KEY,
     resave: true,
     saveUninitialized: true
 }));
-
-
-
 // Configure session settings
 app.get('/some-route', (req, res) => {
     // Get the 'id' value from the session
@@ -201,14 +179,23 @@ app.get('/savetextdrive/:textt',async(req,res) => {
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+
 async function AIschedule() {
   // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-  const prompt = " (make a spreadsheet to a School takes a list of teachers names and thier subjects and thier classes as input . then make a spreedsheets for scaduale for Classes in each class spreedsheet{teachers names , thier subjects , teaching time}) INPUT({name:ahmed subject:math class:C1},{name:mohamed subject:physics class:C2},{name:Sohib subject:Chimstry class:C1},{name:Mohab subject:math class:C4}) (donot print any thing else output) OUTPUT as json file have(techername , class , subject , time)";
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  console.log(text);
+for (i=1 ; i < 5 ; i++){
+  newtime = Math.floor(Math.random() * (15 - 8)) + 8;
+  console.log(newtime)
+
+  const timeintable = await Table.findOne({index : i});
+  timeintable.Time = newtime;
+  await timeintable.save();
+}
+  //const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  //const prompt = "Generate a JSON schedule for a school using the provided list of teachers, their subjects, and their classes. For each class, create a schedule that includes the teacher's name, their subject, and the teaching time. Use the following input format:INPUT:{name: ahmed, subject: math, class: C1},{name: mohamed, subject physics, class: C2}, {name: Sohib, subject: chemistry, class: C1}, {name: Mohab, subject: math, class: C4} Generate the output in JSON format with the following structure for each class schedule: OUTPUT:{teacherName: ahmed, class: C1, subject: math, time: time_slot_here}, {teacherName: mohamed, class: C2, subject: physics, time: time_slot_here}, {teacherName: Sohib, class: C1, subject: chemistry, time: time_slot_here},  {teacherName: Mohab, class: C4, subject: math, time: time_slot_here} Ensure that the JSON output only includes the fields: teacherName, class, subject, and time. Do not print any other text.";
+  //const result = await model.generateContent(prompt);
+  //const response = await result.response;
+  //const text = response.text();
+  //console.log(text);
 }
 async function Bot(m) {
     // For text-only input, use the gemini-pro model
@@ -219,7 +206,6 @@ async function Bot(m) {
     const text =  response.text();
     return text;
   }
-
   async function ASKAI(m) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"}); 
@@ -241,8 +227,6 @@ app.get('/runai', (req, res) => {
    resp1 = await Bot(me);
 res.send(resp1);
 });
-
-
 app.get('/Bot2/:message',async (req, res) => {
   me = req.params.message;
   // Execute the function
@@ -258,17 +242,20 @@ passport.deserializeUser(Student.deserializeUser());
 
 app.get('/dashboard',isLoggedIn,async function  (req, res)  {
     const table = await Table.find();
-    const user = {
-        firstName: 'Tim',
-        lastName: 'Cook',
-    }
+    //const user = await Student.find();
      res.render ('index',{
         table: table,
-        user: user
+        user: req.session.user
     } ); // Pass data to the EJS file
 });
 
+app.get('/room',isLoggedIn,async function  (req, res)  {
 
+  res.render ('room',{
+    user: req.session.user
+} );
+
+})
 // Pages routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,  'landing.html'));
@@ -276,7 +263,7 @@ app.get('/', (req, res) => {
 app.get('/quiz',isLoggedIn, function (req, res) {
     res.sendFile(path.join(__dirname,  'quiz.html'));
 });
-app.get('/session', (req, res) => {
+app.get('/session',isLoggedIn, function (req, res) {
     res.sendFile(path.join(__dirname,  'session.html'));
 });
 app.get('/Payment', (req, res) => {
@@ -293,27 +280,93 @@ app.get('/profile', (req, res) => {
 app.get('/Pomodoro', (req, res) => {
   res.sendFile(path.join(__dirname,  'Pomodoro.html'));
 });
+app.get('/Assignment', (req, res) => {
+  res.sendFile(path.join(__dirname,  'Assignment.html'));
+});
+app.get('/Announcement', (req, res) => {
+  res.sendFile(path.join(__dirname,  'Announcement.html'));
+});
+app.get('/Report', (req, res) => {
+  res.sendFile(path.join(__dirname,  'Report.html'));
+});
+app.get('/grades', (req, res) => {
+  res.sendFile(path.join(__dirname,  'grades.html'));
+});
 app.get('/withfriends', (req, res) => {
   res.sendFile(path.join(__dirname,  'session.html'));
 });
 app.get('/lec' ,(req, res) => {
     res.sendFile(path.join(__dirname,  'lec.html'));
 });
+app.get('/Study' ,(req, res) => {
+  res.sendFile(path.join(__dirname,  'Study.html'));
+});
 app.get('/login', (req, res) => {
   res.render("login");
+});
+app.get('/sub', (req, res) => {
+  res.render("subject");
 });
 app.get('/register', (req, res) => {
   res.render("register");
 });
-app.post('/savefile',(req , res)=>{
-filesave = req.body.myFile;
-fs.writeFile( 'files/',filesave);
 
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+      var dir = './files';
+      if (!fs.existsSync(dir)){
+          fs.mkdirSync(dir);
+      }
+      callback(null, dir);
+  },
+  filename: function (req, file, callback) {
+      callback(null, file.originalname);
+  }
+});
+var upload = multer({storage: storage}).array('files', 12);
+
+app.post('/upload', function (req, res, next) {
+  upload(req, res, function (err) {
+      if (err) {
+        console.log(err)
+          return res.end("Something went wrong:(");
+
+      }
+      res.end("Upload completed.");
+  });
 })
 
 
-auth = false;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const uploadDir = path.join(__dirname, 'files');
+app.post('/savefile',(req , res)=>{
+filesave = req.body.myFile;
+fse.move(filesave, "files/c.png", (err) => { 
+  if (err) return console.log(err); 
+  console.log(`File successfully moved!!`); 
+}); 
+})
+
+auth = false;
 idnum = 2000
 app.post("/register", async (req, res) => {
   idnum = idnum+1 
@@ -327,7 +380,6 @@ app.post("/register", async (req, res) => {
  
   return res.status(200).json(user);
 });
-
 app.post("/dashboard", async function(req, res){
   try {
       // check if the user exists
@@ -340,8 +392,6 @@ app.post("/dashboard", async function(req, res){
           req.session.isLoggedIn = true;
           req.session.save();
            res.redirect("/dashboard")
-           
-           
              } else {
           res.status(400).json({ error: "Password doesn't match" });
         }
@@ -352,26 +402,16 @@ app.post("/dashboard", async function(req, res){
       res.status(400).json({ error });
     }
 });
-
 app.get("/logout", function (req, res) {
   req.logout(function(err) {
       if (err) { return next(err); }
-      res.redirect('/');
+      res.redirect('/login');
     });
 });
-
-
-
 function isLoggedIn(req, res, next) {
   if (req.session.isLoggedIn) return next();
   res.redirect("/login");
 }
-
-app.get("/user", (req, res) => {
-  const sessionuser = req.session.user;
-  res.send(sessionuser);
-});
-
 app.use(express.static(path.join(__dirname, '.')));
 let rooms = {};
 let socketroom = {};
@@ -379,7 +419,7 @@ let socketname = {};
 let micSocket = {};
 let videoSocket = {};
 let roomBoard = {};
-io.on('connect', socket => {
+io.on('connect', socket  => {
     socket.on("join room", (roomid, username) => {
         socket.join(roomid);
         socketroom[socket.id] = roomid;

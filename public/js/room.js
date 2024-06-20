@@ -155,19 +155,13 @@ myvideooff.style.visibility = 'hidden';
 const configuration = { iceServers: [{ urls: "stun:stun.stunprotocol.org" }] }
 
 const mediaConstraints = { video: true, audio: true };
-
 let connections = {};
 let cName = {};
 let audioTrackSent = {};
 let videoTrackSent = {};
-
 let mystream, myscreenshare;
-
-
 document.querySelector('.roomcode').innerHTML = `${roomid}`
-
 function CopyClassText() {
-
     var textToCopy = document.querySelector('.roomcode');
     var currentRange;
     if (document.getSelection().rangeCount > 0) {
@@ -630,7 +624,7 @@ videoButt.addEventListener('click', () => {
         }
         videoButt.innerHTML = `<i class="fas fa-video"></i>`;
         videoAllowed = 1;
-        videoButt.style.backgroundColor = "#4ECCA3";
+        videoButt.style.backgroundColor = "purple";
         if (mystream) {
             mystream.getTracks().forEach(track => {
                 if (track.kind === 'video')
@@ -672,7 +666,7 @@ audioButt.addEventListener('click', () => {
         }
         audioButt.innerHTML = `<i class="fas fa-microphone"></i>`;
         audioAllowed = 1;
-        audioButt.style.backgroundColor = "#4ECCA3";
+        audioButt.style.backgroundColor = "purple";
         if (mystream) {
             mystream.getTracks().forEach(track => {
                 if (track.kind === 'audio')
