@@ -24,6 +24,13 @@
 
   </head>
   <body >
+
+
+    <audio src="Assignment.wav"  autoplay>
+  <source src="Assignment.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
     <div
       class="flex h-screen bg-gray-50 dark:bg-purple-900"
       :class="{ 'overflow-hidden': isSideMenuOpen }"
@@ -784,5 +791,18 @@
 </body>
 <script type="text/javascript">
   document.getElementById("file").value = "";
+</script>
+
+
+<script>
+
+var x = document.getElementById("myAudio");
+
+function playAudio() {
+  x.play();
+}
+playAudio()
+    
+
 </script>
 </html>

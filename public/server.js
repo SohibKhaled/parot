@@ -39,27 +39,7 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
-say.export('You moved to Dashboard page', '', 0.75, 'dashboard.wav', (err) => {
-  if (err) {
-    return console.error(err)
-  }
-  console.log('Text has been saved to dashboard.wav.')
-})
-const { equal } = require('looks-same'); // Or require('pixelmatch')
-function comparePhotos(path1, path2, callback) {
-  // Read image files asynchronously
-  fs.readFile(path1, (err1, data1) => {
-    if (err1) {
-      return callback(err1);
-    }
 
-    fs.readFile(path2, (err2, data2) => {
-      if (err2) {
-        return callback(err2);
-      }
-    });
-  });
-}
 app.use(express.json());
 mongoose.connect(process.env.DB_KEY)
 .then(() => {
@@ -312,8 +292,9 @@ app.get('/grades', (req, res) => {
     user: req.session.user
 } );});
 app.get('/withfriends', (req, res) => {
-  res.sendFile(path.join(__dirname,  'session.html'));
-});
+  res.render ('session',{
+    user: req.session.user
+} )});
 app.get('/lec' ,(req, res) => {
   res.render ('lec',{
     user: req.session.user

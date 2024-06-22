@@ -760,9 +760,25 @@
 
            
      </div>
+     <audio src="Grades.wav"  autoplay>
+      <source src="`grades.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      var x = document.getElementById("myAudio");
+      
+      function playAudio() {
+        x.play();
+      }
+      playAudio()
+        
+      
+      </script>
 
 </body>
 <script type="text/javascript">
   document.getElementById("file").value = "";
 </script>
+
+
 </html>
