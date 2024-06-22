@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-   
+    <link rel="icon" type="image/x-icon" href="PLogo.png">
+
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
@@ -62,13 +63,10 @@
               </a>
             </li>
 
-            <% if ( user.userType == "teacher") { %>
+            <% if ( user.userType == "teacher" || user.userType == "student") { %>
 
             <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
+             
               <a
               class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               href="/lec"
@@ -96,10 +94,7 @@
 
 
             <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
+             
               <a
               class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               href="/Assignment"
@@ -127,10 +122,7 @@
 
 
               <li class="relative px-6 py-3">
-                <span
-                  class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                  aria-hidden="true"
-                ></span>
+               
                 <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/grades"
@@ -145,22 +137,21 @@
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                  <path  d="M19.404,6.65l-5.998-5.996c-0.292-0.292-0.765-0.292-1.056,0l-2.22,2.22l-8.311,8.313l-0.003,0.001v0.003l-0.161,0.161c-0.114,0.112-0.187,0.258-0.21,0.417l-1.059,7.051c-0.035,0.233,0.044,0.47,0.21,0.639c0.143,0.14,0.333,0.219,0.528,0.219c0.038,0,0.073-0.003,0.111-0.009l7.054-1.055c0.158-0.025,0.306-0.098,0.417-0.211l8.478-8.476l2.22-2.22C19.695,7.414,19.695,6.941,19.404,6.65z M8.341,16.656l-0.989-0.99l7.258-7.258l0.989,0.99L8.341,16.656z M2.332,15.919l0.411-2.748l4.143,4.143l-2.748,0.41L2.332,15.919z M13.554,7.351L6.296,14.61l-0.849-0.848l7.259-7.258l0.423,0.424L13.554,7.351zM10.658,4.457l0.992,0.99l-7.259,7.258L3.4,11.715L10.658,4.457z M16.656,8.342l-1.517-1.517V6.823h-0.003l-0.951-0.951l-2.471-2.471l1.164-1.164l4.942,4.94L16.656,8.342z"></path>
-                  </svg>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
+                </svg>
                   <span class="ml-4">Grades</span>
                 </a>
               </li>
-  
+           
+              
               <% } %>
 
 
             <% if ( user.userType == "student") { %>
 
             <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
+            
+              
               <a
               class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               href="/Study"
@@ -184,11 +175,12 @@
             <% } %>
 
 
+
+            <% if ( user.userType == "teacher") { %>
+
             <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
+             
+              
               <a
               class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               href="/Report"
@@ -208,8 +200,9 @@
                 <span class="ml-4">Reports</span>
               </a>
             </li>
-          
-         
+          <% } %>
+          <% if ( user.userType == "teacher") { %>
+
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -232,6 +225,11 @@
                 <span class="ml-4">Create Session</span>
               </a>
             </li>
+
+            <% } %>
+
+            <% if ( user.userType == "student") { %>
+
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -253,9 +251,11 @@
                 <span class="ml-4">Quiz</span>
               </a>
             </li>
+ <% } %>
  
-           
           </ul>
+          <% if ( user.userType == "admin") { %>
+
           <div class="px-6 my-6">
             <a href="/register">  <button
               class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
@@ -264,6 +264,7 @@
               <span class="ml-2" aria-hidden="true">+</span>
             </button></a>
           </div>
+          <% } %>
         </div>
       </aside>
       <!-- Mobile sidebar -->
@@ -290,199 +291,242 @@
         @click.away="closeSideMenu"
         @keydown.escape="closeSideMenu"
       >
-        <div class="py-4 text-gray-600 dark:text-gray-200 dark:text-gray-400">
-          <a href="" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-            <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
-            PAROT    
-        </a>
-          <ul class="mt-6">
-            <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
-              <a
-                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                href=""
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                  ></path>
-                </svg>
-                <span class="ml-4">Dashboard</span>
+      <div class="py-4 text-gray-600 dark:text-gray-200 dark:text-gray-400">
+        <a href="/Dashboard" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                  <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
+                  PAROT    
               </a>
-            </li>
-
-            <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
-              <a
-              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              href="/lec"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                <path fill="none" d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
-								l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
-                </svg>
-                <span class="ml-4">Lectures</span>
-              </a>
-            </li>
-          
-            <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
-              <a
-              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              href="/Assignment"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                <path  d="M19.404,6.65l-5.998-5.996c-0.292-0.292-0.765-0.292-1.056,0l-2.22,2.22l-8.311,8.313l-0.003,0.001v0.003l-0.161,0.161c-0.114,0.112-0.187,0.258-0.21,0.417l-1.059,7.051c-0.035,0.233,0.044,0.47,0.21,0.639c0.143,0.14,0.333,0.219,0.528,0.219c0.038,0,0.073-0.003,0.111-0.009l7.054-1.055c0.158-0.025,0.306-0.098,0.417-0.211l8.478-8.476l2.22-2.22C19.695,7.414,19.695,6.941,19.404,6.65z M8.341,16.656l-0.989-0.99l7.258-7.258l0.989,0.99L8.341,16.656z M2.332,15.919l0.411-2.748l4.143,4.143l-2.748,0.41L2.332,15.919z M13.554,7.351L6.296,14.61l-0.849-0.848l7.259-7.258l0.423,0.424L13.554,7.351zM10.658,4.457l0.992,0.99l-7.259,7.258L3.4,11.715L10.658,4.457z M16.656,8.342l-1.517-1.517V6.823h-0.003l-0.951-0.951l-2.471-2.471l1.164-1.164l4.942,4.94L16.656,8.342z"></path>
-                </svg>
-                <span class="ml-4">Assignments</span>
-              </a>
-            </li>
-            <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
-              <a
-              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              href="/Study"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4"/>
-              </svg>
-                <span class="ml-4">StudyTools</span>
-              </a>
-            </li>
-            <li class="relative px-6 py-3">
-              <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-              ></span>
-              <a
-              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              href="/Report"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                <path fill="none" d="M17.222,5.041l-4.443-4.414c-0.152-0.151-0.356-0.235-0.571-0.235h-8.86c-0.444,0-0.807,0.361-0.807,0.808v17.602c0,0.448,0.363,0.808,0.807,0.808h13.303c0.448,0,0.808-0.36,0.808-0.808V5.615C17.459,5.399,17.373,5.192,17.222,5.041zM15.843,17.993H4.157V2.007h7.72l3.966,3.942V17.993z"></path>
-                </svg>
-                <span class="ml-4">Reports</span>
-              </a>
-            </li>
-          
-
-
-            <li class="relative px-6 py-3">
-              <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/session"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M17.919,4.633l-3.833,2.48V6.371c0-1-0.815-1.815-1.816-1.815H3.191c-1.001,0-1.816,0.814-1.816,1.815v7.261c0,1.001,0.815,1.815,1.816,1.815h9.079c1.001,0,1.816-0.814,1.816-1.815v-0.739l3.833,2.478c0.428,0.226,0.706-0.157,0.706-0.377V5.01C18.625,4.787,18.374,4.378,17.919,4.633 M13.178,13.632c0,0.501-0.406,0.907-0.908,0.907H3.191c-0.501,0-0.908-0.406-0.908-0.907V6.371c0-0.501,0.407-0.907,0.908-0.907h9.079c0.502,0,0.908,0.406,0.908,0.907V13.632zM17.717,14.158l-3.631-2.348V8.193l3.631-2.348V14.158z"
-                  ></path>
-                </svg>
-                <span class="ml-4">Create Session</span>
-              </a>
-            </li>
-            <li class="relative px-6 py-3">
-              <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/quiz"
-              >
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                  d="M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"                  ></path>
-                </svg>
-                <span class="ml-4">Quiz</span>
-              </a>
-            </li>
-   
-          </ul>
-          <ul>
-          
-           
-
-          </ul>
-          <div class="px-6 my-6">
-           <a href="register.html"> <button
-             class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+        <ul class="mt-6">
+          <li class="relative px-6 py-3">
+            <span
+              class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+              aria-hidden="true"
+            ></span>
+            <a
+              class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+              href="/Dashboard"
             >
-              Create account
-              <span class="ml-2" aria-hidden="true">+</span>
-            </button></a>
-          </div>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+              <span class="ml-4">Dashboard</span>
+            </a>
+          </li>
+
+          <% if ( user.userType == "teacher" || user.userType == "student") { %>
+
+          <li class="relative px-6 py-3">
+           
+            <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="/lec"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+              <path fill="none" d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
+              l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
+              </svg>
+              <span class="ml-4">Lectures</span>
+            </a>
+          </li>
+        <% } %>
+
+
+        <% if ( user.userType == "student") { %>
+
+
+          <li class="relative px-6 py-3">
+           
+            <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="/Assignment"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+              <path  d="M19.404,6.65l-5.998-5.996c-0.292-0.292-0.765-0.292-1.056,0l-2.22,2.22l-8.311,8.313l-0.003,0.001v0.003l-0.161,0.161c-0.114,0.112-0.187,0.258-0.21,0.417l-1.059,7.051c-0.035,0.233,0.044,0.47,0.21,0.639c0.143,0.14,0.333,0.219,0.528,0.219c0.038,0,0.073-0.003,0.111-0.009l7.054-1.055c0.158-0.025,0.306-0.098,0.417-0.211l8.478-8.476l2.22-2.22C19.695,7.414,19.695,6.941,19.404,6.65z M8.341,16.656l-0.989-0.99l7.258-7.258l0.989,0.99L8.341,16.656z M2.332,15.919l0.411-2.748l4.143,4.143l-2.748,0.41L2.332,15.919z M13.554,7.351L6.296,14.61l-0.849-0.848l7.259-7.258l0.423,0.424L13.554,7.351zM10.658,4.457l0.992,0.99l-7.259,7.258L3.4,11.715L10.658,4.457z M16.656,8.342l-1.517-1.517V6.823h-0.003l-0.951-0.951l-2.471-2.471l1.164-1.164l4.942,4.94L16.656,8.342z"></path>
+              </svg>
+              <span class="ml-4">Assignments</span>
+            </a>
+          </li>
+
+          <% } %>
+
+
+          <% if ( user.userType == "student") { %>
+
+
+            <li class="relative px-6 py-3">
+             
+              <a
+              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+              href="/grades"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
+              </svg>
+                <span class="ml-4">Grades</span>
+              </a>
+            </li>
+         
+            
+            <% } %>
+
+
+          <% if ( user.userType == "student") { %>
+
+          <li class="relative px-6 py-3">
+          
+            
+            <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="/Study"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4"/>
+            </svg>
+              <span class="ml-4">StudyTools</span>
+            </a>
+          </li>
+
+          <% } %>
+
+
+
+          <% if ( user.userType == "teacher") { %>
+
+          <li class="relative px-6 py-3">
+           
+            
+            <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="/Report"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+              <path fill="none" d="M17.222,5.041l-4.443-4.414c-0.152-0.151-0.356-0.235-0.571-0.235h-8.86c-0.444,0-0.807,0.361-0.807,0.808v17.602c0,0.448,0.363,0.808,0.807,0.808h13.303c0.448,0,0.808-0.36,0.808-0.808V5.615C17.459,5.399,17.373,5.192,17.222,5.041zM15.843,17.993H4.157V2.007h7.72l3.966,3.942V17.993z"></path>
+              </svg>
+              <span class="ml-4">Reports</span>
+            </a>
+          </li>
+        <% } %>
+        <% if ( user.userType == "teacher") { %>
+
+          <li class="relative px-6 py-3">
+            <a
+              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+              href="/session"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M17.919,4.633l-3.833,2.48V6.371c0-1-0.815-1.815-1.816-1.815H3.191c-1.001,0-1.816,0.814-1.816,1.815v7.261c0,1.001,0.815,1.815,1.816,1.815h9.079c1.001,0,1.816-0.814,1.816-1.815v-0.739l3.833,2.478c0.428,0.226,0.706-0.157,0.706-0.377V5.01C18.625,4.787,18.374,4.378,17.919,4.633 M13.178,13.632c0,0.501-0.406,0.907-0.908,0.907H3.191c-0.501,0-0.908-0.406-0.908-0.907V6.371c0-0.501,0.407-0.907,0.908-0.907h9.079c0.502,0,0.908,0.406,0.908,0.907V13.632zM17.717,14.158l-3.631-2.348V8.193l3.631-2.348V14.158z"
+                ></path>
+              </svg>
+              <span class="ml-4">Create Session</span>
+            </a>
+          </li>
+
+          <% } %>
+
+          <% if ( user.userType == "student") { %>
+
+          <li class="relative px-6 py-3">
+            <a
+              class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+              href="/quiz"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                d="M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"                  ></path>
+              </svg>
+              <span class="ml-4">Quiz</span>
+            </a>
+          </li>
+<% } %>
+
+        </ul>
+        <% if ( user.userType == "admin") { %>
+
+        <div class="px-6 my-6">
+          <a href="/register">  <button
+            class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+          >
+            Create account
+            <span class="ml-2" aria-hidden="true">+</span>
+          </button></a>
         </div>
+        <% } %>
+      </div>
       </aside>
       <div class="flex flex-col flex-1 w-full">
         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
@@ -513,41 +557,7 @@
               
             </div>
             <ul class="flex items-center flex-shrink-0 space-x-6">
-              <!-- Theme toggler -->
-              <li class="flex">
-                <button
-                  class="rounded-md focus:outline-none focus:shadow-outline-purple"
-                  @click="toggleTheme"
-                  aria-label="Toggle color mode"
-                >
-                  <template x-if="!dark">
-                    <svg
-                      class="w-5 h-5"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                      ></path>
-                    </svg>
-                  </template>
-                  <template x-if="dark">
-                    <svg
-                      class="w-5 h-5"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </template>
-                </button>
-              </li>
+              <!-- Theme toggler --> 
               <!-- Notifications menu -->
               <li class="relative">
                 <button
@@ -715,13 +725,17 @@ src="dashboard.wav">
             </div>
 
             <!-- New Table -->
+            <% if ( user.userType == "admin") { %>
 
             <button type="button"  onclick="send()"
             class="bg-purple-500 hover:bg-purple-600 
               text-white px-2 py-1 rounded-md">
             Generate schedule
           </button>
+          <% } %>
             <!--test-->
+
+
             <div class="container mx-auto mt-10">
               <div class="wrapper bg-white rounded shadow w-full dark:bg-gray-800 text-black dark:text-white">
                 <div class="header flex justify-between border-b p-2">
@@ -771,7 +785,8 @@ src="dashboard.wav">
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Sunday</b></span>
+                            <span class="text-black invisible lg:visible dark:text-white"><b> Sunday</b></span>
+                            <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Sun</b></span>
                           </div>                 
                         </div>
                       </td>                     
@@ -795,7 +810,7 @@ src="dashboard.wav">
                         <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                           <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                             <div class="top h-5 w-full">
-                              <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                              <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
                               <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
                             </div>       
                           </div>
@@ -812,7 +827,8 @@ src="dashboard.wav">
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Monday</b></span>
+                          <span class="text-black invisible lg:visible dark:text-white"><b> Monday</b></span>
+                          <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Mon</b></span>
                         </div>
                 
                       </div>
@@ -837,7 +853,7 @@ src="dashboard.wav">
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                            <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
                             <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
                           </div>       
                         </div>
@@ -849,7 +865,8 @@ src="dashboard.wav">
                     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                       <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                         <div class="top h-5 w-full">
-                          <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Tuesday</b></span>
+                          <span class="text-black invisible lg:visible dark:text-white"><b> Tuesday</b></span>
+                          <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Tue</b></span>
                         </div>
                 
                       </div>
@@ -875,27 +892,20 @@ src="dashboard.wav">
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                            <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
                              <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
                           </div>       
                         </div>
                       </td>
                      <% } %>
                   </tr> 
-                  
-                  
-                  
-                      <!--         line 2 -->
-          
-                    <!--         line 3 -->
-
-
 
                     <tr class="text-center h-20">
                       <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                         <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                           <div class="top h-5 w-full">
-                            <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Wednesday</b></span>
+                            <span class="text-black invisible lg:visible dark:text-white"><b> Wednesday</b></span>
+                            <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Wen</b></span>
                           </div>
                         </div>
                       </td>
@@ -919,7 +929,7 @@ src="dashboard.wav">
                         <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
                           <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
                             <div class="top h-5 w-full">
-                              <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+                              <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
                                <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
                             </div>       
                           </div>
@@ -929,14 +939,16 @@ src="dashboard.wav">
                     
                     
                     
- <!--         line 3 -->
+
 
 
  <tr class="text-center h-20">
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Thursday</b></span>
+        <span class="text-black invisible lg:visible dark:text-white"><b> Thursday</b></span>
+        <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Thur</b></span>
+
       </div>
     </div>
   </td>
@@ -960,7 +972,7 @@ src="dashboard.wav">
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
           <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>
@@ -981,7 +993,8 @@ src="dashboard.wav">
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:block dark:text-white"><b> Friday</b></span>
+        <span class="text-black invisible lg:visible dark:text-white"><b> Friday</b></span>
+        <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Fri</b></span>
       </div>
 
     </div>
@@ -1007,7 +1020,7 @@ src="dashboard.wav">
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
           <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>
@@ -1026,7 +1039,7 @@ src="dashboard.wav">
   <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-10 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
     <div class="flex flex-col h-20 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
       <div class="top h-5 w-full">
-        <span class="text-black xl:block lg:block md:block sm:hidden dark:text-white"><b>Saturday</b></span>
+        <span class="text-black invisible lg:visible dark:text-white"><b>Saturday</b></span>
         <span class="text-hidden xl:hidden lg:hidden md:hidden sm:block  dark:text-white"><b>Sat</b></span>
       </div>
     </div>
@@ -1053,7 +1066,7 @@ src="dashboard.wav">
     <td class="border p-1 h-10 xl:w-30 lg:w-30 md:w-30 sm:w-5 w-5 h-10 p-3 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
       <div class="flex flex-col h-20  mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-5 h-20 mx-auto overflow-hidden">
         <div class="top h-5 w-full">
-          <span class="xl:block lg:block md:block sm:hidden text-gray-600 dark:text-gray-200"><%= k[j]%></span>
+          <span class="invisible lg:visible text-gray-600 dark:text-gray-200"><%= k[j]%></span>
           <span class="xl:hidden lg:hidden md:hidden sm:block text-gray-600 dark:text-gray-200"><%=s[j]%></span>
         </div>       
       </div>

@@ -197,6 +197,18 @@ for (i=1 ; i < 5 ; i++){
   //const text = response.text();
   //console.log(text);
 }
+
+app.post('/qrcode', (req, res) => {
+  const qrCode = req.body.qrCode;
+
+  if (qrCode) {
+      console.log(`Received QR code: ${qrCode}`);
+      res.status(200).send({ message: 'QR code received successfully' });
+  } else {
+      res.status(400).send({ message: 'QR code is missing' });
+  }
+});
+
 async function Bot(m) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"}); 
@@ -260,12 +272,16 @@ app.get('/room',isLoggedIn,async function  (req, res)  {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,  'landing.html'));
 });
+app.get('/ParotAI', (req, res) => {
+  res.sendFile(path.join(__dirname,  'AskAI.html'));
+});
 app.get('/quiz',isLoggedIn, function (req, res) {
     res.sendFile(path.join(__dirname,  'quiz.html'));
 });
 app.get('/session',isLoggedIn, function (req, res) {
-    res.sendFile(path.join(__dirname,  'session.html'));
-});
+  res.render ('session',{
+    user: req.session.user
+} );});
 app.get('/Payment', (req, res) => {
     res.sendFile(path.join(__dirname,  'Payment.html'));
 });
@@ -281,7 +297,9 @@ app.get('/Pomodoro', (req, res) => {
   res.sendFile(path.join(__dirname,  'Pomodoro.html'));
 });
 app.get('/Assignment', (req, res) => {
-  res.sendFile(path.join(__dirname,  'Assignment.html'));
+  res.render ('Assignment' , {
+    user: req.session.user
+})
 });
 app.get('/Announcement', (req, res) => {
   res.sendFile(path.join(__dirname,  'Announcement.html'));
@@ -290,16 +308,22 @@ app.get('/Report', (req, res) => {
   res.sendFile(path.join(__dirname,  'Report.html'));
 });
 app.get('/grades', (req, res) => {
-  res.sendFile(path.join(__dirname,  'grades.html'));
-});
+  res.render ('grades',{
+    user: req.session.user
+} );});
 app.get('/withfriends', (req, res) => {
   res.sendFile(path.join(__dirname,  'session.html'));
 });
 app.get('/lec' ,(req, res) => {
-    res.sendFile(path.join(__dirname,  'lec.html'));
-});
+  res.render ('lec',{
+    user: req.session.user
+} );});
 app.get('/Study' ,(req, res) => {
-  res.sendFile(path.join(__dirname,  'Study.html'));
+  res.render ('study',{
+    user: req.session.user
+} );});
+app.get('/Office' ,(req, res) => {
+  res.sendFile(path.join(__dirname,  'office.html'));
 });
 app.get('/login', (req, res) => {
   res.render("login");
@@ -307,8 +331,15 @@ app.get('/login', (req, res) => {
 app.get('/sub', (req, res) => {
   res.render("subject");
 });
-app.get('/register', (req, res) => {
-  res.render("register");
+app.get('/register',isLoggedIn, function (req, res) {
+ if (req.session.user == 'admin'){
+  res.render("register");}
+  else{
+    res.redirect("/dashboard")
+  }
+});
+app.get('/404', (req, res) => {
+  res.sendFile(path.join(__dirname,  '404.html'));
 });
 
 var storage = multer.diskStorage({
@@ -378,7 +409,7 @@ app.post("/register", async (req, res) => {
     id: idstr
   });
  
-  return res.status(200).json(user);
+  res.redirect("/login")
 });
 app.post("/dashboard", async function(req, res){
   try {
@@ -399,7 +430,7 @@ app.post("/dashboard", async function(req, res){
         res.status(400).json({ error: "Email doesn't exist" });
       }
     } catch (error) {
-      res.status(400).json({ error });
+      res.redirect("/404")
     }
 });
 app.get("/logout", function (req, res) {

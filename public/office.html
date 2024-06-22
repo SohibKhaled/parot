@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office</title>
+    <link rel="icon" type="image/x-icon" href="PLogo.png">
+
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/init-alpine.js"></script>
+   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/charts-lines.js" defer></script>
+    <script src="./assets/js/charts-pie.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./pdf.js/src/pdf.js"></script>
+
+
+  </head>
+  <body class="bg-gray-50 dark:bg-purple-900 " >
+    <div class="flex flex-col flex-1 w-full">
+
+  
+    <div
+      class="flex h-screen "
+      :class="{ 'overflow-hidden': isSideMenuOpen }"
+    >
+      <!-- Desktop sidebar -->
+
+       
+
+
+        <div class="py-4 ml-5 text-gray-600 dark:text-gray-200 dark:text-gray-400">
+
+           
+          <a href="/Dashboard" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <img class="w-8 h-8 mr-2" src="PLogo.png" alt="logo">
+                    PAROT    
+                </a>
+
+
+                <button type="button" onclick="location.href = '/study';" class="w-full flex items-center justify-center w-1/2 px-5 py-2 text-sm text-white transition-colors duration-200  border rounded-lg gap-x-2 sm:w-auto bg-purple-600  active:bg-purple-600 hover:bg-purple-700   dark:text-gray-200 dark:border-gray-700">
+                    <svg class="w-5 h-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                    </svg>
+                    <span>Go back</span>
+                </button>
+
+                
+                </div>
+                <main class=" lg:mx-40 lg:mt-4 md:mx-40 md:mt-4 sm:mx-5 sm:mt-4 h-full overflow-y-auto  w-full">
+
+                  
+                
+
+
+
+
+
+                    <div class="mt-60 mx-auto">
+                        <a href="https://docs.google.com" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/assets/img/word.png" alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Parot Word</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">You can use Parot Office with google docs service</p>
+                            </div>
+                        </a>
+
+                        <a href="https://docs.google.com/spreadsheets" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/assets/img/sheets.png" alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Parot Sheets</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">You can use Parot Office with google Sheets service</p>
+                            </div>
+                        </a>
+
+                        <a href="https://docs.google.com/presentation" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="assets/img/slides.webp" alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Parot Slides</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">You can use Parot Office with google Slides service</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+
+               
+               
+              
+
+
+             
+           </main>
+      
+            </div>
+
+           
+
+           
+     </div>
+
+</body>
+
+</html>
