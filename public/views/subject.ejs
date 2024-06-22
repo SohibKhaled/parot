@@ -56,6 +56,9 @@
                 </div>
                 <main class=" lg:mx-40 lg:mt-4 md:mx-40 md:mt-4 sm:mx-5 sm:mt-4 h-full overflow-y-auto  w-full">
 
+                  <% if ( user.userType == "teacher") { %>
+
+
                   <div class="container">
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         <input type="file" name="files"
@@ -71,7 +74,7 @@
                 </script>
 
 
-
+<% } %>
                 
 
 

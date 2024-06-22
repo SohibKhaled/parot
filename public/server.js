@@ -26,6 +26,7 @@ const mongoose = require('mongoose')
 const Student = require('./DB/student')
 const Table = require('./DB/table')
 const Subject = require('./DB/subject')
+const cors = require('cors');
 const cohere = new CohereClient({
   token:  process.env.AI_TOKEN, // This is your trial API key
 });
@@ -39,6 +40,7 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(express.json());
 mongoose.connect(process.env.DB_KEY)
@@ -170,15 +172,9 @@ for (i=1 ; i < 5 ; i++){
   timeintable.Time = newtime;
   await timeintable.save();
 }
-  //const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-  //const prompt = "Generate a JSON schedule for a school using the provided list of teachers, their subjects, and their classes. For each class, create a schedule that includes the teacher's name, their subject, and the teaching time. Use the following input format:INPUT:{name: ahmed, subject: math, class: C1},{name: mohamed, subject physics, class: C2}, {name: Sohib, subject: chemistry, class: C1}, {name: Mohab, subject: math, class: C4} Generate the output in JSON format with the following structure for each class schedule: OUTPUT:{teacherName: ahmed, class: C1, subject: math, time: time_slot_here}, {teacherName: mohamed, class: C2, subject: physics, time: time_slot_here}, {teacherName: Sohib, class: C1, subject: chemistry, time: time_slot_here},  {teacherName: Mohab, class: C4, subject: math, time: time_slot_here} Ensure that the JSON output only includes the fields: teacherName, class, subject, and time. Do not print any other text.";
-  //const result = await model.generateContent(prompt);
-  //const response = await result.response;
-  //const text = response.text();
-  //console.log(text);
 }
 
-app.post('/qrcode', (req, res) => {
+app.post('/regis', (req, res) => {
   const qrCode = req.body.qrCode;
 
   if (qrCode) {
@@ -310,7 +306,9 @@ app.get('/login', (req, res) => {
   res.render("login");
 });
 app.get('/sub', (req, res) => {
-  res.render("subject");
+  res.render ('subject' , {
+    user: req.session.user
+})
 });
 app.get('/register',isLoggedIn, function (req, res) {
  if (req.session.user == 'admin'){
