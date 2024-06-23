@@ -269,7 +269,7 @@ app.get('/profile', (req, res) => {
   console.log(clientIp)
   res.sendFile(path.join(__dirname,  'profile.html'));
 });
-app.get('/Pomodoro', (req, res) => {
+app.get('/Pomodoro1', (req, res) => {
   res.sendFile(path.join(__dirname,  'Pomodoro.html'));
 });
 app.get('/Assignment', (req, res) => {
