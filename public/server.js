@@ -270,7 +270,7 @@ app.get('/profile', (req, res) => {
   res.sendFile(path.join(__dirname,  'profile.html'));
 });
 app.get('/Pomodoro1', (req, res) => {
-  res.sendFile(path.join(__dirname,  'Pomodoro.html'));
+  res.sendFile(path.join(__dirname,  'pomodoro.html'));
 });
 app.get('/Assignment', (req, res) => {
   res.render ('Assignment' , {
